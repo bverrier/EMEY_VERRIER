@@ -1,3 +1,12 @@
+/*
+EMEY Quentin
+VERRIER Bastien
+
+Code PIN User : 1234
+Code PIN Admin : 123456
+
+ */
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -170,10 +179,12 @@ public class Purse {
     void commitTransactionDebit(){
         if (lifeCycleState == LCS.USE) {
             transLeft--;
+            userAuthenticate = false;
             checkCardStatus();
             inTransaction = false;
         }
     }
+
     void commitTransactionCredit(){
         if (lifeCycleState == LCS.USE) {
             transLeft--;
